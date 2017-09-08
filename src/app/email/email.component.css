@@ -1,0 +1,67 @@
+.outlook {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.email-list {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid black;
+	overflow-y: auto;
+}
+
+.email-expansion {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.scroll-bar {
+	background-color: gray;
+	width: 20px;
+	height: 302px;
+	position: absolute;
+	right: -1px;
+	top: 0px;
+}
+
+.email {
+	border-bottom: 1px solid black;
+	height: 50px;
+	padding: 5px;
+}
+
+.email-from {
+	font-weight: 700;
+}
+
+.email-date {
+	float: right;
+	margin-right: 20px;
+}
+
+.email-subject {
+	display: block;
+}
+
+@media only screen and (max-width: 800px) {
+	.outlook {
+		width: 90%;
+	}
+    .email-list {
+    	width: 100%;
+    }
+
+    .email-expansion {
+    	width: 100%;
+    }
+
+    .email {
+		height: 70px;
+	}
+}
