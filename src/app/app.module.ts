@@ -1,6 +1,7 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 // Services
 import { EmailService } from './email-service.service';
@@ -17,7 +18,8 @@ import { EmailComponent } from './email/email.component';
     EmailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [EmailService],
   bootstrap: [AppComponent]

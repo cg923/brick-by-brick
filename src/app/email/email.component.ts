@@ -36,19 +36,18 @@ export class EmailComponent implements OnInit {
 
   trash() { return this.mailbox === 'trash'; }
 
-
-
   constructor(private emailService: EmailService) { }
 
   ngOnInit() {
-  	this.emailService.allEmails().then(emails => {
-  		this.emails = emails;
+  	this.emailService.allEmails()
+      .subscribe(emails => {
+  		this.emails = emails.json();
   		this.emails.forEach(element => {
   			element["blurb"] = element["text"].substring(0, 59);
   			if(element.text.length > 60) element["blurb"] += "...";
   			element.expanded = false;
 
-        // Distribute into correct arrays.
+        // Distribute into mailbox arrays.
         if(element.inbox) this.inboxEmails.push(element);
         if(element.draft) this.draftEmails.push(element);
         if(element.junk) this.junkEmails.push(element);

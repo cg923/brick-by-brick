@@ -18,7 +18,7 @@ let emails = [
   		subject: 'Letter',
   		date: '4/30/16',
   		text: 'Greg- We got your letter.  We love you. Our thoughts are with you in what must be a very difficult time.   We are of course in shock, and need some time to process this before we talk. Love, Dad',
-  	  	mailbox: 'inbox'
+  	  mailbox: 'inbox'
     },
   	{
   		to: 'Corey Selover',
@@ -26,7 +26,7 @@ let emails = [
   		subject: 'Re: News!!',
   		date: '9/6/17',
   		text: 'HOORAY!',
-		mailbox: 'drafts'
+		  mailbox: 'drafts'
   	}
 ];
 
