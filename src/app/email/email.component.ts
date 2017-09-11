@@ -41,6 +41,7 @@ export class EmailComponent implements OnInit {
   ngOnInit() {
   	this.emailService.allEmails()
       .subscribe(emails => {
+      console.log(emails.json());
   		this.emails = emails.json();
   		this.emails.forEach(element => {
   			element["blurb"] = element["text"].substring(0, 59);
@@ -48,10 +49,10 @@ export class EmailComponent implements OnInit {
   			element.expanded = false;
 
         // Distribute into mailbox arrays.
-        if(element.inbox) this.inboxEmails.push(element);
-        if(element.draft) this.draftEmails.push(element);
-        if(element.junk) this.junkEmails.push(element);
-        if(element.trash) this.trashEmails.push(element);
+        if(element.mailbox === 'inbox') this.inboxEmails.push(element);
+        if(element.mailbox === 'drafts') this.draftEmails.push(element);
+        if(element.mailbox === 'junk') this.junkEmails.push(element);
+        if(element.mailbox === 'trash') this.trashEmails.push(element);
   		});
   	});
   }

@@ -18,7 +18,7 @@
 		<!-- INBOX -->
 		<div *ngIf="inbox()">
 			<div *ngFor="let email of inboxEmails" class="email">
-				<div *ngIf="email.inbox" class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
+				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
 					<span class="email-from">{{email.from}}</span>
 					<span class="email-date">{{email.date}}</span>
 					<span class="email-subject">{{email.subject}}</span>
@@ -30,7 +30,7 @@
 		<!-- DRAFTS -->
 		<div *ngIf="drafts()">
 			<div *ngFor="let email of draftEmails" class="email">
-				<div *ngIf="email.draft" class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
+				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
 					<span class="email-from">{{email.from}}</span>
 					<span class="email-date">{{email.date}}</span>
 					<span class="email-subject">{{email.subject}}</span>
@@ -42,7 +42,7 @@
 		<!-- JUNK -->
 		<div *ngIf="junk()">
 			<div *ngFor="let email of junkEmails" class="email">
-				<div *ngIf="email.junk" class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
+				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
 					<span class="email-from">{{email.from}}</span>
 					<span class="email-date">{{email.date}}</span>
 					<span class="email-subject">{{email.subject}}</span>
@@ -54,7 +54,7 @@
 		<!-- TRASH -->
 		<div *ngIf="trash()">
 			<div *ngFor="let email of trashEmails" class="email">
-				<div *ngIf="email.trash" class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
+				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email)}">
 					<span class="email-from">{{email.from}}</span>
 					<span class="email-date">{{email.date}}</span>
 					<span class="email-subject">{{email.subject}}</span>
