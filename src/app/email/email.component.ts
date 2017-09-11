@@ -13,7 +13,6 @@ export class EmailComponent implements OnInit {
 
   selectEmail(email) {
   	this.selected = email;
-  	console.log(this.selected);
   }
 
   constructor(private emailService: EmailService) { }

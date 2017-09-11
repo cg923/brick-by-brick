@@ -1,4 +1,18 @@
 <div class="outlook">
+	<div class="mailboxes">
+		<div class="mailbox">
+			Inbox
+		</div>
+		<div class="mailbox">
+			Drafts
+		</div>
+		<div class="mailbox">
+			Junk
+		</div>
+		<div class="mailbox">
+			Trash
+		</div>
+	</div>
 	<div class="scroll-bar"></div>
 	<div *ngIf="emails.length" class="email-list">
 		<div *ngFor="let email of emails" class="email">
@@ -12,7 +26,10 @@
 	</div>
 	<div class="email-expansion">
 		<div *ngIf="selected" class="email-body">
-			{{selected.text}}
+			<span class="email-from">{{selected.from}}</span>
+			<span class="email-date">{{selected.date}}</span>
+			<span class="email-subject">{{selected.subject}}</span>
+			<span class="email-body">{{selected.text}}</span>
 		</div>
 	</div>
 </div>
