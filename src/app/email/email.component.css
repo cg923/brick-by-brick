@@ -49,9 +49,14 @@
 }
 
 .email {
+	display: block;
 	border-bottom: 1px solid black;
 	height: 50px;
 	padding: 5px;
+}
+
+.selected {
+	background: blue;
 }
 
 .email-from {
