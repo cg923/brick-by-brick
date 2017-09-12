@@ -1,4 +1,8 @@
-<div class="outlook">
+<div *ngIf="visible" class="outlook">
+	<div class="header">
+		<div class="title">Light-Mail</div>
+		<div class="close-button" (click)="hideLightMail()">X</div>
+	</div>
 	<div class="mailboxes">
 		<div class="mailbox" (click)="selectMailbox('inbox')">
 			Inbox

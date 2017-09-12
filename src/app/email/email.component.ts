@@ -9,6 +9,8 @@ import { EmailService } from '../email-service.service';
 })
 export class EmailComponent implements OnInit {
 
+  visible = true;
+
   emails = [];
   inboxEmails = [];
   draftEmails = [];
@@ -35,6 +37,10 @@ export class EmailComponent implements OnInit {
   junk() { return this.mailbox === 'junk'; }
 
   trash() { return this.mailbox === 'trash'; }
+
+  hideLightMail() { this.visible = false; }
+
+  showLightMail() { this.visible = true; }
 
   constructor(private emailService: EmailService) { }
 
