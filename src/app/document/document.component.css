@@ -1,0 +1,33 @@
+.documents {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.header {
+	width: 100%;
+	height: 40px;
+	background: gray;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.title {
+	display: inline-block;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.close-button {
+	float: right;
+	padding: 10px;
+	background: #ADAEAD;
+}
+
+.contents {
+	height: 600px;
+}

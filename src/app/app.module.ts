@@ -10,12 +10,14 @@ import { EmailService } from './email-service.service';
 import { AppComponent } from './app.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { EmailComponent } from './email/email.component';
+import { DocumentComponent } from './document/document.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DesktopComponent,
-    EmailComponent
+    EmailComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
