@@ -4,5 +4,8 @@ Brick By Brick is an interactive web experience where users discover the threads
 
 The story is a true one, told incidentally by actual e-mails I have sent and received.  It is the story of coming out as transgender and navigating the familial complications that came with it.
 
+# User Stories
+https://trello.com/b/Gu8k266E/brick-by-brick
+
 # Wireframes
-<img src="assets/wireframe1.jpg"><img src="assets/wireframe2.jpg"><img src="assets/wireframe3.jpg"><img src="assets/wireframe4.jpg">
+<img src="assets/wireframe1.JPG"><img src="assets/wireframe2.JPG"><img src="assets/wireframe3.JPG"><img src="assets/wireframe4.JPG">
