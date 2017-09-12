@@ -11,10 +11,17 @@
 	top: 20px;
 	left: 20px;
 	width: 80px;
-	background-color: white;
 	text-align: center;
+}
+
+.docs-icon {
+	position: absolute;
+	top: 120px;
+	left: 20px;
+	width: 80px;
 }
 
 .icon {
 	width: 80px;
+	background-color: white;
 }

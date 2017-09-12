@@ -9,7 +9,7 @@ import { EmailService } from '../email-service.service';
 })
 export class EmailComponent implements OnInit {
 
-  visible = true;
+  visible = false;
 
   emails = [];
   inboxEmails = [];
