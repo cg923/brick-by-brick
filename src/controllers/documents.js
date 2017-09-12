@@ -3,13 +3,13 @@ const db 			= require('../models');
 
 // GET /emails
 // INDEX
-function getEmails(req, res) {
-	db.Email.find({}, function(err, emails) {
+function getDocuments(req, res) {
+	db.Documents.find({}, function(err, documents) {
 		if (err) throw err;
-		res.json(emails);
+		res.json(documents);
 	});
 }
 
 module.exports = {
-	getEmails: getEmails
+	getDocuments: getDocuments
 };

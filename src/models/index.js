@@ -5,3 +5,4 @@ mongoose.connect(process.env.MONGODB_URI ||
 				"mongodb://localhost/brickbybrick");
 
 module.exports.Email = require('./email');
+module.exports.Document = require('./document');

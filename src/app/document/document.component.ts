@@ -9,6 +9,8 @@ export class DocumentComponent implements OnInit {
 
   visible = false;
 
+  documents = [];
+
   hideDocuments() { this.visible = false; }
 
   showDocuments() { this.visible = true; }
