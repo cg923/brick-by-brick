@@ -1,13 +1,13 @@
 <div class="background">
-	<div class="email-icon" (click)="email.showLightMail()">
+	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
 		<span class="icon-name">Light-Mail</span>
 	</div>
-	<div class="docs-icon" (click)="document.showDocuments()">
+	<div class="docs-icon" (click)="showDocuments()">
 		<img class="icon" src="assets/documents.png">
 		<span class="icon-name">Documents</span>
 	</div>
-	<app-email #email></app-email>
-	<app-document #document></app-document>
+	<app-email></app-email>
+	<app-document></app-document>
 </div>
 
