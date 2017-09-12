@@ -47,7 +47,6 @@ export class EmailComponent implements OnInit {
   ngOnInit() {
   	this.emailService.allEmails()
       .subscribe(emails => {
-      console.log(emails.json());
   		this.emails = emails.json();
   		this.emails.forEach(element => {
   			element["blurb"] = element["text"].substring(0, 59);

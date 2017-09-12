@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 // Services
 import { EmailService } from './email-service.service';
+import { DocumentService } from './document.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -23,7 +24,7 @@ import { DocumentComponent } from './document/document.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [EmailService],
+  providers: [EmailService, DocumentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
