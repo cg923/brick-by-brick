@@ -1,4 +1,4 @@
-<div *ngIf="email" class="notification">
+<div *ngIf="email" class="notification" [ngClass]="{'appearing': appearing, 'visible': visible, 'disappearing': disappearing}">
 	<div class="conent">
 		<strong>You have new mail:</strong><br>
 		<span class="email-from">{{email.from}}</span>

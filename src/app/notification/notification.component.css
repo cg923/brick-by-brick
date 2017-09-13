@@ -18,3 +18,25 @@
 .email-subject {
 	display: block;
 }
+
+.appearing {
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+}
+
+.visible {
+
+}
+
+.disappearing {
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-direction: reverse;
+}
+
+@keyframes fade {
+	0% { right: -300px; }
+	100% { right: 0px; }
+}
