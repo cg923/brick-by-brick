@@ -28,8 +28,13 @@ export class EmailComponent implements OnInit {
 
   selectEmail(email) {
   	this.selected = email;
+
+    if(!this.selected.read) {
+      this.readEmails++;
+    }
     this.selected.read = true;
-    this.readEmails++;
+
+    // Triggers for incoming e-mails
     if(this.readEmails === 4 ||
        this.readEmails === 10 ||
        this.readEmails === 21) {
