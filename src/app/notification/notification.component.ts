@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from '../email-service.service';
 
 @Component({
   selector: 'app-notification',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
+  email;
 
-  ngOnInit() {
+  receiveEmail(email) {
+  	this.email = email;
   }
 
+  constructor(private emailService: EmailService) { }
+
+  ngOnInit() {
+  	this.emailService.emailObservable()
+      .subscribe(email => {
+      	this.email = email;
+      });
+  }
 }

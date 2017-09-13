@@ -75,7 +75,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
-    to: 'Danika Cooper',
+    to: 'Dana Cooper',
     from: 'Laura Cooper',
     subject: 'Hmmm',
     date: '8/28/16',
@@ -83,7 +83,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
-    to: 'Danika Cooper',
+    to: 'Dana Cooper',
     from: 'Laura Cooper',
     subject: 'Check out "60 minutes overtime. On transgender',
     date: '8/28/16',
@@ -131,7 +131,7 @@ let emails = [
     mailbox: 'incoming'
   },
   {
-    to: 'Danika Cooper',
+    to: 'Dana Cooper',
     from: 'Mini Martinez',
     subject: 'Re: HOLY SHITTTTTTTT',
     date: '9/3/17',
@@ -139,7 +139,7 @@ let emails = [
     mailbox: 'incoming'
   },
   {
-    to: 'Danika Cooper',
+    to: 'Dana Cooper',
     from: 'Netflix',
     subject: 'David, now is a great time to restart your membership',
     date: '9/2/17',
@@ -172,7 +172,7 @@ let emails = [
   },
   {
     to: 'Henry Cooper',
-    from: 'Danika Cooper',
+    from: 'Dana Cooper',
     subject: 'Re: Re: Uncle Elliot',
     date: '6/15/16',
     text: "Hi Dad.  Thank you for the information.  I will also be at the memorial service.  I think it is probably unlikely, unfortunately, that I will make it to Maine July 4.  If it turns out I can make it I am happy to sleep on the floor or pullout couch or something.\n\nLove,\nDavid",
@@ -188,7 +188,7 @@ let emails = [
   },
   {
     to: 'Henry Cooper',
-    from: 'Danika Cooper',
+    from: 'Dana Cooper',
     subject: 'Re: Thanksgiving',
     date: '10/28/16',
     text: "Hi Fam.  I'm trying to sort of follow the tide.  So I think if y'all will be there in December that's what I'll do too.  Plus, Mini’s grandma who lives an hour from Irvine has invited us for Thanksgiving, and Mini only has 4 days off.  So that seems like a good option for us.\nSorry to miss you guys for Thanksgiving, although I'm glad you have plans!",
@@ -196,7 +196,7 @@ let emails = [
   },
   {
     to: 'Henry Cooper',
-    from: 'Danika Cooper',
+    from: 'Dana Cooper',
     subject: 'Re: T Shirt',
     date: '8/24/17',
     text: "Hi Dad,\n\nI’m glad you like it!  I’m sorry it’s too small.  Unfortunately I made it myself! (Or rather, I paid someone online to make it).  I looked forever and ever for a real one but they just don’t exist anymore.\n\nIn any case, I will order you a large.  I’m sure there’s someone else in the family who will gladly take a medium (I think because it’s a custom made shirt they won’t take returns, but like I said, there’s got to be a Cooper or Fielder who would want it).",
@@ -204,7 +204,7 @@ let emails = [
   },
   {
     to: 'Mini Martinez',
-    from: 'Danika Cooper',
+    from: 'Dana Cooper',
     subject: 'HOLY SHITTTTTTTT',
     date: '9/3/17',
     text: "A RECRUITER FROM IBM JUST CALLED ME AND THEY WANT TO INTERVIEW ME RIGHT AWAY WTF AHHHHHHHHHH",

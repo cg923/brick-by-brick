@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmailComponent } from '../email/email.component';
 import { DocumentComponent } from '../document/document.component';
 import { MenuComponent } from '../menu/menu.component';
+import { NotificationComponent } from '../notification/notification.component';
 import { EmailService } from '../email-service.service';
 
 @Component({

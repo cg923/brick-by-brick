@@ -53,6 +53,7 @@ export class EmailComponent implements OnInit {
 
   incomingMail() {
     let next = this.incomingEmails.pop();
+    this.emailService.passEmail(next);
     this.inboxEmails.push(next);
 
     if(this.readEmails === 21) {

@@ -13,7 +13,7 @@ import { DesktopComponent } from './desktop/desktop.component';
 import { EmailComponent } from './email/email.component';
 import { DocumentComponent } from './document/document.component';
 import { MenuComponent } from './menu/menu.component';
-import { NotificationComponent } from '../src/app/notification/notification.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
