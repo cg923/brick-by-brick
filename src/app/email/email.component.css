@@ -56,7 +56,7 @@
 	left: 0px;
 	top: 41px;
 	border: 1px solid black;
-	box-shadow: 2px 0px 10px -1px black;
+	box-shadow: 2px 2px 5px 0px black;
 }
 
 .mailbox {
@@ -65,6 +65,22 @@
 	height: 60px;
 	padding: 20px 0 0 20px;
 	border-bottom: 1px solid black;
+}
+
+.mailbox-inbox {
+	border-bottom: 2px solid red;
+}
+
+.mailbox-sent {
+	border-bottom: 2px solid blue;
+}
+
+.mailbox-drafts {
+	border-bottom: 2px solid green;
+}
+
+.mailbox-trash {
+	border-bottom: 2px solid yellow;
 }
 
 .unread-total {
@@ -81,6 +97,13 @@
 }
 
 .email {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.email-details {
 	display: block;
 	border-bottom: 1px solid black;
 	height: 54px;
@@ -97,11 +120,10 @@
 }
 
 .selected {
-	background: blue;
+	background: #D5E9E3;
 }
 
 .email-from {
-	/*font-weight: 700;*/
 	font-size: 18px;
 }
 
@@ -120,9 +142,25 @@
 	display: block;
 }
 
+.reply-button {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 40px;
+	background-color: #00866F;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px 1px black;
+}
+
+.reply-button-text {
+	display: block;
+	padding-top: 10px;
+}
+
 .email-body {
 	display: block;
-	margin-top: 10px;
 }
 
 pre {
@@ -139,12 +177,17 @@ pre {
 		width: 90%;
 	}
 
+	.header {
+		width: 100%;
+	}
+
 	.mailboxes {
 		position: absolute;
 		width: 100%;
 		height: 100px;
 		top: 40px;
 		border: none;
+		border-left: 1px solid black;
 	}
 
 	.mailbox {
@@ -153,18 +196,41 @@ pre {
 		height: 76px;
 		margin: 0 4px;
 		padding: 0;
+		padding-top: 15px;
 		border-left: 1px solid black;
 		border-right: 1px solid black;
 		border-top: 1px solid black;
 	}
 
-	.scroll-bar {
-		top: 140px;
+	.unread-total {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.mailbox-inbox {
+		border-bottom: 5px solid red;
+	}
+
+	.mailbox-sent {
+		border-bottom: 5px solid blue;
+	}
+
+	.mailbox-drafts {
+		border-bottom: 5px solid green;
+	}
+
+	.mailbox-trash {
+		border-bottom: 5px solid yellow;
 	}
 
     .email-list {
     	width: 100%;
-    	margin: 100px auto 0 auto;
+    	height: 200px;
+    	margin: 99px auto 0 auto;
+    }
+
+    .email-details {
+    	height: 74px;
     }
 
     .email-expansion {
@@ -172,8 +238,4 @@ pre {
     	margin: 0 auto;
     	padding: 10px 0px 0px 0px;
     }
-
-    .email {
-		height: 70px;
-	}
 }

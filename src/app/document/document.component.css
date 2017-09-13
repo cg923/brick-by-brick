@@ -78,8 +78,15 @@ pre {
 @media only screen and (max-width: 800px) {
 	.documents {
 		width: 90%;
+		height: 90%;
 	}
+
+	.header {
+		width: 100%;
+	}
+
 	.document {
 		width: 90%;
+		height: 90%;
 	}
 }

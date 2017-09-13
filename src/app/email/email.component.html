@@ -4,16 +4,16 @@
 		<div class="close-button" (click)="hideLightMail()">X</div>
 	</div>
 	<div class="mailboxes">
-		<div class="mailbox" (click)="selectMailbox('inbox')">
+		<div class="mailbox mailbox-inbox" (click)="selectMailbox('inbox')">
 			Inbox <span class="unread-total">{{inboxUnreads}}</span>
 		</div>
-		<div class="mailbox" (click)="selectMailbox('sent')">
+		<div class="mailbox mailbox-sent" (click)="selectMailbox('sent')">
 			Sent <span class="unread-total">{{sentUnreads}}</span>
 		</div>
-		<div class="mailbox" (click)="selectMailbox('drafts')">
+		<div class="mailbox mailbox-drafts" (click)="selectMailbox('drafts')">
 			Drafts <span class="unread-total">{{draftsUnreads}}</span>
 		</div>
-		<div class="mailbox" (click)="selectMailbox('trash')">
+		<div class="mailbox mailbox-trash" (click)="selectMailbox('trash')">
 			Trash <span class="unread-total">{{trashUnreads}}</span>
 		</div>
 	</div>
@@ -22,10 +22,12 @@
 		<div *ngIf="inbox()">
 			<div *ngFor="let email of inboxEmails" class="email">
 				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email), 'read': email.read}">
-					<span class="email-from">{{email.from}}</span>
-					<span class="email-date">{{email.date}}</span>
-					<span class="email-subject">{{email.subject}}</span>
-					<span class="email-preview">{{email.blurb}}</span>
+					<div class="email-details">
+						<span class="email-from">{{email.from}}</span>
+						<span class="email-date">{{email.date}}</span>
+						<span class="email-subject">{{email.subject}}</span>
+						<span class="email-preview">{{email.blurb}}</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -34,10 +36,12 @@
 		<div *ngIf="sent()">
 			<div *ngFor="let email of sentEmails" class="email">
 				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email), 'read': email.read}">
-					<span class="email-from">{{email.from}}</span>
-					<span class="email-date">{{email.date}}</span>
-					<span class="email-subject">{{email.subject}}</span>
-					<span class="email-preview">{{email.blurb}}</span>
+					<div class="email-details">
+						<span class="email-from">{{email.from}}</span>
+						<span class="email-date">{{email.date}}</span>
+						<span class="email-subject">{{email.subject}}</span>
+						<span class="email-preview">{{email.blurb}}</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -46,10 +50,12 @@
 		<div *ngIf="drafts()">
 			<div *ngFor="let email of draftEmails" class="email">
 				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email), 'read': email.read}">
-					<span class="email-from">{{email.from}}</span>
-					<span class="email-date">{{email.date}}</span>
-					<span class="email-subject">{{email.subject}}</span>
-					<span class="email-preview">{{email.blurb}}</span>
+					<div class="email-details">
+						<span class="email-from">{{email.from}}</span>
+						<span class="email-date">{{email.date}}</span>
+						<span class="email-subject">{{email.subject}}</span>
+						<span class="email-preview">{{email.blurb}}</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,10 +64,12 @@
 		<div *ngIf="trash()">
 			<div *ngFor="let email of trashEmails" class="email">
 				<div class="email-header" (click)="selectEmail(email)" [ngClass]="{'selected': amISelected(email), 'read': email.read}">
-					<span class="email-from">{{email.from}}</span>
-					<span class="email-date">{{email.date}}</span>
-					<span class="email-subject">{{email.subject}}</span>
-					<span class="email-preview">{{email.blurb}}</span>
+					<div class="email-details">
+						<span class="email-from">{{email.from}}</span>
+						<span class="email-date">{{email.date}}</span>
+						<span class="email-subject">{{email.subject}}</span>
+						<span class="email-preview">{{email.blurb}}</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -82,6 +90,9 @@ due to the <pre> tag. -->
 					</span>
 				</pre>
 			</span>
+			<div *ngIf="selected.reply" class="reply-button">
+				<span class="reply-button-text">Reply</span>
+			</div>
 		</div>
 	</div>
 </div>

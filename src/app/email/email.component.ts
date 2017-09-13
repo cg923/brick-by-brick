@@ -62,7 +62,7 @@ export class EmailComponent implements OnInit {
 
     // Triggers for incoming e-mails
     if(this.readEmails === 4 ||
-       this.readEmails === 10 ||
+       this.readEmails === 18 ||
        this.readEmails === 23) {
       this.incomingMail();
     }
@@ -84,7 +84,14 @@ export class EmailComponent implements OnInit {
 
   incomingMail() {
     let next = this.incomingEmails.pop();
+
+    // Send email to service to pass to notifications
     this.emailService.passEmail(next);
+
+    // Add reply button if it's the last e-mail
+    if(this.incomingEmails.length === 0) next.reply = true;
+ 
+    // Move incoming into inbox
     this.inboxEmails.push(next);
     this.inboxUnreads++;
 
@@ -104,9 +111,10 @@ export class EmailComponent implements OnInit {
           from: 'Danika Cooper',
           subject: 'Re: Update?',
           date: '9/5/17',
-          text: "IBM is flying me to VT for an interview!!",
+          text: "IBM is flying me to VT for an interview!!\n\nSee you soon!",
           mailbox: 'drafts'
-        });
+      });
+      this.emailService.passEmail(this.draftEmails[0]);
     }
   }
 
@@ -146,5 +154,4 @@ export class EmailComponent implements OnInit {
   		});
   	});
   }
-
 }
