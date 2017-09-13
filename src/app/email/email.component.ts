@@ -14,7 +14,7 @@ export class EmailComponent implements OnInit {
   emails = [];
   inboxEmails = [];
   draftEmails = [];
-  junkEmails = [];
+  sentEmails = [];
   trashEmails = [];
 
   selected = null;
@@ -34,7 +34,7 @@ export class EmailComponent implements OnInit {
 
   drafts() { return this.mailbox === 'drafts'; }
 
-  junk() { return this.mailbox === 'junk'; }
+  sent() { return this.mailbox === 'sent'; }
 
   trash() { return this.mailbox === 'trash'; }
 
@@ -56,7 +56,7 @@ export class EmailComponent implements OnInit {
         // Distribute into mailbox arrays.
         if(element.mailbox === 'inbox') this.inboxEmails.push(element);
         if(element.mailbox === 'drafts') this.draftEmails.push(element);
-        if(element.mailbox === 'junk') this.junkEmails.push(element);
+        if(element.mailbox === 'sent') this.sentEmails.push(element);
         if(element.mailbox === 'trash') this.trashEmails.push(element);
   		});
   	});
