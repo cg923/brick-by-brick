@@ -198,12 +198,16 @@ let emails = [
 
 let docs = [
   {
-    title: 'People_who_know.doc',
-    text: 'blah blah'
+    title: 'People Who Know.doc',
+    text: '6/26/17 ...EVERYONE!!!!\nPeople who know\nMini\nBen\nKat\nAnne\nJonathan\nRyan\nKatya\nSensei\nLisa\nJackie\nBrett\nRyan R.\nGreg\nEmber\nAJ\nErik\nDoug\nLisa\nElla\nSam\nAbby\nNick\nRoxann\nAunt Kara\nMiguel\nJake\nStephen\nMark'
   },
   {
-    title: 'Untitled.doc',
-    text: 'More blah blah'
+    title: 'Letter.doc',
+    text: "Dear Mom and Dad,\nYou’re probably surprised to see that I have written you a letter, especially when my phone calls are sporadic at best.  I wanted to share something with you, however, and I feel that a letter allows me to gather my thoughts and present them calmly and clearly.\nBefore I start" 
+  },
+  {
+    title: "Untitled.doc",
+    text: "Yes, I have shared this with people before.  But usually when I finish one of those conversations I have the terrifying feeling that I have been completely misunderstood.  Which of course is fucking ridiculous because it’s my job to present myself and look at the lies I just told.  I have never once told the whole truth, nothing but the truth, so help me God.  I suspect that no one has but I know for sure that I haven’t.\nAnd then I told you, but this time I said it differently. You reacted in all the right ways, but that wasn’t important because you’re a wonderful person and I knew you would say just what you said and react just the way you reacted.\nWhat was important was that each word that stumbled out of my lips, no matter how pained, was completely and utterly honest.  And when we finished, instead of that lingering feeling of regret that I had not come quite clean, that now you would think of me as some weirdo with a fetish and how could I possibly think it was appropriate for me to share that with you, I knew that you understood everything I was trying to say.  The conversation was so short because I didn’t have to qualify anything I said."
   }
 ];
 

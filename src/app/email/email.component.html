@@ -17,7 +17,6 @@
 			Trash
 		</div>
 	</div>
-	<div class="scroll-bar"></div>
 	<div *ngIf="emails.length" class="email-list">
 		<!-- INBOX -->
 		<div *ngIf="inbox()">
@@ -73,7 +72,7 @@
 			<span class="email-from">{{selected.from}}</span>
 			<span class="email-date">{{selected.date}}</span>
 			<span class="email-subject">{{selected.subject}}</span>
-			<span class="email-body">{{selected.text}}</span>
+			<span class="email-body"><pre>{{selected.text}}</pre></span>
 		</div>
 	</div>
 </div>
