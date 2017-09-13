@@ -6,6 +6,17 @@
 	height: 100vh;
 }
 
+.results {
+	animation-name: results;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes results {
+	0% { opacity: 1.0; }
+	100% { opacity: 0; }
+}
+
 .email-icon {
 	position: absolute;
 	top: 20px;

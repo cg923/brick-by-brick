@@ -7,6 +7,17 @@
 	box-shadow: 2px 2px 10px -1px black;
 }
 
+.results {
+	animation-name: results;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes results {
+	0% { opacity: 1.0; }
+	100% { opacity: 0; }
+}
+
 .header {
 	width: 799px;
 	height: 40px;
@@ -172,6 +183,49 @@ pre {
 	font-size: 16px;
 }
 
+.reply {
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	width: 80%;
+	height: 400px;
+	background: white;
+	border: 1px solid black;
+	box-shadow: 1px 1px 5px 1px black;
+}
+
+.reply .header {
+	width: 100%;
+}
+
+.reply-body {
+	padding: 10px;
+}
+
+.reply-option {
+	padding: 10px;
+	display: inline-block;
+	width: 45%;
+	text-align: center;
+}
+
+.send-button {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 40px;
+	background-color: #00866F;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px 1px black;
+}
+
+.send-button-text {
+	display: block;
+	padding-top: 10px;
+}
+
 @media only screen and (max-width: 800px) {
 	.outlook {
 		width: 90%;
@@ -237,5 +291,9 @@ pre {
     	width: 100%;
     	margin: 0 auto;
     	padding: 10px 0px 0px 0px;
+    }
+
+    .reply {
+    	width: 80%;
     }
 }

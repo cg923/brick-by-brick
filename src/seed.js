@@ -1,6 +1,7 @@
 const mongoose    = require('mongoose');
 const Email       = require('./models/email');
 const Document    = require('./models/document');
+const Reply       = require('./models/reply');
 
 mongoose.connect(process.env.MONGODB_URI ||
 				process.env.MONGOLAB_URI ||
@@ -13,6 +14,10 @@ Email.remove({}, function(err) {
 });
 
 Document.remove({}, function(err) {
+  if(err) throw err;
+});
+
+Reply.remove({}, function(err) {
   if(err) throw err;
 });
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { EmailService } from '../email-service.service';
 
@@ -9,7 +9,12 @@ import { EmailService } from '../email-service.service';
 })
 export class EmailComponent implements OnInit {
 
-  visible = false;
+  // Used to call method in parent component
+  @Output() results = new EventEmitter<string>();
+
+  callParent() {
+    this.results.next('results');
+  }
 
   // Mailboxes
   emails = [];
@@ -29,6 +34,8 @@ export class EmailComponent implements OnInit {
   // 'Current' values.
   selected = null;
   mailbox = 'inbox';
+  replyVisible = false;
+  visible = false;
 
   amISelected(email) {
     return this.selected === email;
@@ -68,6 +75,43 @@ export class EmailComponent implements OnInit {
     }
   }
 
+  reply() {
+    this.replyVisible = true;
+
+    this.draftsUnreads += 2;
+    this.draftEmails.push(  
+      {
+        replyOption: 1,
+        to: 'Henry Cooper',
+        from: 'Dana Cooper',
+        subject: 'Re: Update?',
+        date: '9/5/17',
+        text: "IBM is flying me to VT for an interview!!\n\nSee you soon!",
+        mailbox: 'drafts'
+      },
+      {
+        replyOption: 2,
+        to: 'Henry Cooper',
+        from: 'Dana Cooper',
+        subject: 'Re: Update?',
+        date: '9/5/17',
+        text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDana",
+        mailbox: 'drafts'
+    });
+    this.emailService.passEmail(this.draftEmails[0]);
+  }
+
+  sendReply(email) {
+    this.emailService.postReply(email)
+      .subscribe(response => {
+        this.callParent();
+      });
+  }
+
+  closeReply() {
+    this.replyVisible = false;
+  }
+
   selectMailbox(mailbox) { this.mailbox = mailbox; }
 
   inbox() { return this.mailbox === 'inbox'; }
@@ -94,28 +138,6 @@ export class EmailComponent implements OnInit {
     // Move incoming into inbox
     this.inboxEmails.push(next);
     this.inboxUnreads++;
-
-    if(this.readEmails === 23) {
-      this.draftsUnreads += 2;
-      this.draftEmails.push(  
-        {
-          to: 'Henry Cooper',
-          from: 'Danika Cooper',
-          subject: 'Re: Update?',
-          date: '9/5/17',
-          text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDanika",
-          mailbox: 'drafts'
-        },
-        {
-          to: 'Henry Cooper',
-          from: 'Danika Cooper',
-          subject: 'Re: Update?',
-          date: '9/5/17',
-          text: "IBM is flying me to VT for an interview!!\n\nSee you soon!",
-          mailbox: 'drafts'
-      });
-      this.emailService.passEmail(this.draftEmails[0]);
-    }
   }
 
   constructor(private emailService: EmailService) { }

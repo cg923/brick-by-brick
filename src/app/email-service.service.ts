@@ -24,6 +24,10 @@ export class EmailService {
   	return this.http.get(`${this.baseUrl}/emails`);
   }
 
+  postReply(email) {
+    return this.http.post(`${this.baseUrl}/replies`, email);
+  }
+
   constructor(private http: Http) { }
 
 }

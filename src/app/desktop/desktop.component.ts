@@ -14,6 +14,8 @@ export class DesktopComponent implements OnInit {
   @ViewChild(EmailComponent) email;
   @ViewChild(DocumentComponent) documents;
 
+  results = false;
+
   showLightMail() { 
   	this.email.showLightMail(); 
   	this.documents.hideDocuments();
@@ -22,6 +24,10 @@ export class DesktopComponent implements OnInit {
   showDocuments() { 
   	this.email.hideLightMail();
   	this.documents.showDocuments();
+  }
+
+  changeToResults() {
+    this.results = true;
   }
 
   constructor(private emailService: EmailService) { }

@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" [ngClass]="{'results': results}">
 	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
 		<span class="icon-name">Light-Mail</span>
@@ -7,7 +7,7 @@
 		<img class="icon" src="assets/documents.png">
 		<span class="icon-name">Documents</span>
 	</div>
-	<app-email></app-email>
+	<app-email (results)="changeToResults()"></app-email>
 	<app-document></app-document>
 	<app-menu></app-menu>
 	<app-notification></app-notification>
