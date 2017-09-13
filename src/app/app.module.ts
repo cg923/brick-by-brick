@@ -13,6 +13,7 @@ import { DesktopComponent } from './desktop/desktop.component';
 import { EmailComponent } from './email/email.component';
 import { DocumentComponent } from './document/document.component';
 import { MenuComponent } from './menu/menu.component';
+import { NotificationComponent } from '../src/app/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuComponent } from './menu/menu.component';
     DesktopComponent,
     EmailComponent,
     DocumentComponent,
-    MenuComponent
+    MenuComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
