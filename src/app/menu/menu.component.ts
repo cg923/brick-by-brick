@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  currentTime = new Date();
+  currentTime;
+  formattedTime;
 
   constructor() { }
 
   ngOnInit() {
   	setInterval(()=> {
   		this.currentTime = new Date();
+      this.formattedTime = ('0' + this.currentTime.getHours()).slice(-2) + ':' +
+                           ('0' + this.currentTime.getMinutes()).slice(-2) + ':' +
+                           ('0' + this.currentTime.getSeconds()).slice(-2);
   	});
   }
 
