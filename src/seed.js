@@ -23,7 +23,7 @@ let emails = [
 		from: 'Henry Cooper',
 		subject: 'Letter',
 		date: '4/30/16',
-		text: 'Greg- We got your letter.  We love you. Our thoughts are with you in what must be a very difficult time.   We are of course in shock, and need some time to process this before we talk. Love, Dad',
+		text: 'David- We got your letter.  We love you. Our thoughts are with you in what must be a very difficult time.   We are of course in shock, and need some time to process this before we talk. Love, Dad',
 	  mailbox: 'inbox'
   },
 	{

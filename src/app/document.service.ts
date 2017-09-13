@@ -6,7 +6,7 @@ export class DocumentService {
 
   baseUrl = 'http://localhost:3000';
 
-  allEmails() {
+  allDocuments() {
   	return this.http.get(`${this.baseUrl}/documents`);
   }
 

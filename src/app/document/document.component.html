@@ -4,6 +4,16 @@
 		<div class="close-button" (click)="hideDocuments()">X</div>
 	</div>
 	<div class="contents">
-		<div *ngFor="let document of documents" class="document"></div>
+		<div *ngFor="let document of documents" class="doc" (click)="openDocument(document)">
+			<img src="assets/document.png" class="doc-icon">
+			<div class="doc-title">{{document.title}}</div>
+		</div>
 	</div>
+</div>
+<div *ngIf="documentVisible" class="document">
+	<div class="header">
+		<div class="title">{{currentDocument.title}}</div>
+		<div class="close-button" (click)="closeDocument()">X</div>
+	</div>
+	<div class="document-contents">{{currentDocument.text}}</div>
 </div>
