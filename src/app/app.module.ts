@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { EmailComponent } from './email/email.component';
 import { DocumentComponent } from './document/document.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DesktopComponent,
     EmailComponent,
-    DocumentComponent
+    DocumentComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
