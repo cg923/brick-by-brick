@@ -19,7 +19,11 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
   	this.emailService.emailObservable()
       .subscribe(email => {
-      	this.email = email;
+        // Data
+      	this.email = email.email;
+        this.email.subject = this.email.subject.substr(0, 30) + '...';
+
+        // CSS animation variables.
       });
   }
 }
