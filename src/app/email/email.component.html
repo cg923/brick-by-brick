@@ -70,9 +70,18 @@
 	<div class="email-expansion">
 		<div *ngIf="selected" class="email-body">
 			<span class="email-from">{{selected.from}}</span>
+			<span class="email-to">To: {{selected.to}}</span>
 			<span class="email-date">{{selected.date}}</span>
 			<span class="email-subject">{{selected.subject}}</span>
-			<span class="email-body"><pre>{{selected.text}}</pre></span>
+			<span class="email-body">
+				<pre>
+					<span class="inner-pre">
+<!-- TODO: This is not indented because indenting it makes the actual text indented
+due to the <pre> tag. -->
+{{selected.text}}
+					</span>
+				</pre>
+			</span>
 		</div>
 	</div>
 </div>

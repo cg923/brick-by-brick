@@ -123,6 +123,30 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    to: 'David Cooper',
+    from: 'Henry Cooper',
+    subject: 'Update?',
+    date: '9/4/17',
+    text: "David, you mentioned that you spoke to IBM last week.  Any news? Love, Dad",
+    mailbox: 'incoming'
+  },
+  {
+    to: 'Danika Cooper',
+    from: 'Mini Martinez',
+    subject: 'Re: HOLY SHITTTTTTTT',
+    date: '9/3/17',
+    text: "How did they find you?!?!\n\nWhat?! THAT'S AWESOME",
+    mailbox: 'incoming'
+  },
+  {
+    to: 'Danika Cooper',
+    from: 'Netflix',
+    subject: 'David, now is a great time to restart your membership',
+    date: '9/2/17',
+    text: 'You have HTML E-mails disabled. Click here to enable them.\n\nNETFLIX\nEnjoy Netflix Again\n\nNow is a great time to enjoy Netflix again. Watch TV shows & movies on your computer, phone, tablet or right to your TV. Start, pause and continue when you want. And remember, there are no ads or commercials!\n\nRestart Today!',
+    mailbox: 'incoming'
+  },
+  {
     to: 'Henry Cooper',
     from: 'David Cooper',
     subject: 'Re: Letter',
@@ -179,20 +203,12 @@ let emails = [
     mailbox: 'sent'
   },
   {
-    to: 'Henry Cooper',
+    to: 'Mini Martinez',
     from: 'Danika Cooper',
-    subject: 'News!!',
-    date: '9/5/17',
-    text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDanika",
-    mailbox: 'drafts'
-  },
-  {
-    to: 'Henry Cooper',
-    from: 'Danika Cooper',
-    subject: 'News!!',
-    date: '9/5/17',
-    text: "IBM is flying me to VT for an interview!!",
-    mailbox: 'drafts'
+    subject: 'HOLY SHITTTTTTTT',
+    date: '9/3/17',
+    text: "A RECRUITER FROM IBM JUST CALLED ME AND THEY WANT TO INTERVIEW ME RIGHT AWAY WTF AHHHHHHHHHH",
+    mailbox: 'sent'
   },
 ];
 

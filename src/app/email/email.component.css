@@ -88,6 +88,13 @@
 
 .email-from {
 	/*font-weight: 700;*/
+	font-size: 18px;
+}
+
+.email-to {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 .email-date {
@@ -105,11 +112,12 @@
 }
 
 pre {
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.inner-pre {
+	font-size: 16px;
 }
 
 @media only screen and (max-width: 800px) {

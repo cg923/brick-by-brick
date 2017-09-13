@@ -16,6 +16,8 @@ export class EmailComponent implements OnInit {
   draftEmails = [];
   sentEmails = [];
   trashEmails = [];
+  incomingEmails = [];
+  readEmails = 0;
 
   selected = null;
   mailbox = 'inbox';
@@ -27,6 +29,12 @@ export class EmailComponent implements OnInit {
   selectEmail(email) {
   	this.selected = email;
     this.selected.read = true;
+    this.readEmails++;
+    if(this.readEmails === 4 ||
+       this.readEmails === 10 ||
+       this.readEmails === 21) {
+      this.incomingMail();
+    }
   }
 
   selectMailbox(mailbox) { this.mailbox = mailbox; }
@@ -42,6 +50,31 @@ export class EmailComponent implements OnInit {
   hideLightMail() { this.visible = false; }
 
   showLightMail() { this.visible = true; }
+
+  incomingMail() {
+    let next = this.incomingEmails.pop();
+    this.inboxEmails.push(next);
+
+    if(this.readEmails === 21) {
+      this.draftEmails.push(  
+        {
+          to: 'Henry Cooper',
+          from: 'Danika Cooper',
+          subject: 'Re: Update?',
+          date: '9/5/17',
+          text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDanika",
+          mailbox: 'drafts'
+        },
+        {
+          to: 'Henry Cooper',
+          from: 'Danika Cooper',
+          subject: 'Re: Update?',
+          date: '9/5/17',
+          text: "IBM is flying me to VT for an interview!!",
+          mailbox: 'drafts'
+        });
+    }
+  }
 
   constructor(private emailService: EmailService) { }
 
@@ -60,6 +93,7 @@ export class EmailComponent implements OnInit {
         if(element.mailbox === 'drafts') this.draftEmails.push(element);
         if(element.mailbox === 'sent') this.sentEmails.push(element);
         if(element.mailbox === 'trash') this.trashEmails.push(element);
+        if(element.mailbox === 'incoming') this.incomingEmails.push(element);
   		});
   	});
   }
