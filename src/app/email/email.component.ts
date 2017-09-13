@@ -26,6 +26,7 @@ export class EmailComponent implements OnInit {
 
   selectEmail(email) {
   	this.selected = email;
+    this.selected.read = true;
   }
 
   selectMailbox(mailbox) { this.mailbox = mailbox; }
@@ -49,9 +50,10 @@ export class EmailComponent implements OnInit {
       .subscribe(emails => {
   		this.emails = emails.json();
   		this.emails.forEach(element => {
-  			element["blurb"] = element["text"].substring(0, 59);
-  			if(element.text.length > 60) element["blurb"] += "...";
+  			element.blurb = element.text.substring(0, 59);
+  			if(element.text.length > 60) element.blurb += "...";
   			element.expanded = false;
+        element.read = false;
 
         // Distribute into mailbox arrays.
         if(element.mailbox === 'inbox') this.inboxEmails.push(element);
