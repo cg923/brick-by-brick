@@ -1,13 +1,14 @@
 .outlook {
 	position: relative;
 	width: 800px;
+	top: 10px;
 	margin: 0 auto;
 	background-color: white;
 	box-shadow: 2px 2px 10px -1px black;
 }
 
 .header {
-	width: 100%;
+	width: 799px;
 	height: 40px;
 	background: #CECCC7;
 	border-top: 1px solid black;
@@ -30,7 +31,7 @@
 }
 
 .email-list {
-	width: 600px;
+	width: 598px;
 	height: 300px;
 	margin: 0px 0px 0px 201px;
 	border: 1px solid black;
@@ -38,7 +39,7 @@
 }
 
 .email-expansion {
-	width: 580px;
+	width: 578px;
 	height: 300px;
 	margin: 0px 0px 0px 201px;
 	padding: 20px 10px;
@@ -64,6 +65,19 @@
 	height: 60px;
 	padding: 20px 0 0 20px;
 	border-bottom: 1px solid black;
+}
+
+.unread-total {
+	background-color: gray;
+	border-radius: 12px;
+	color: white;
+	display: inline-block;
+	float: right;
+	height: 21px;
+	margin-right: 10px;
+	padding-top: 3px;
+	text-align: center;
+	width: 24px;
 }
 
 .email {

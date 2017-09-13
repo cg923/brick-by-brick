@@ -11,14 +11,22 @@ export class EmailComponent implements OnInit {
 
   visible = false;
 
+  // Mailboxes
   emails = [];
   inboxEmails = [];
   draftEmails = [];
   sentEmails = [];
   trashEmails = [];
   incomingEmails = [];
-  readEmails = 0;
 
+  // Unread/Read counters
+  readEmails = 0;
+  inboxUnreads = 0;
+  draftsUnreads = 0;
+  sentUnreads = 0;
+  trashUnreads = 0;
+
+  // 'Current' values.
   selected = null;
   mailbox = 'inbox';
 
@@ -31,13 +39,31 @@ export class EmailComponent implements OnInit {
 
     if(!this.selected.read) {
       this.readEmails++;
+
+      // Decrease unread count.
+      switch(this.mailbox) {
+        case 'inbox':
+          this.inboxUnreads--;
+          break;
+        case 'drafts':
+          this.draftsUnreads--;
+          break;
+        case 'sent':
+          this.sentUnreads--;
+          break;
+        case 'trash':
+          this.trashUnreads--;
+          break;
+      }
     }
+
+    // Mark as read.
     this.selected.read = true;
 
     // Triggers for incoming e-mails
     if(this.readEmails === 4 ||
        this.readEmails === 10 ||
-       this.readEmails === 21) {
+       this.readEmails === 23) {
       this.incomingMail();
     }
   }
@@ -60,8 +86,10 @@ export class EmailComponent implements OnInit {
     let next = this.incomingEmails.pop();
     this.emailService.passEmail(next);
     this.inboxEmails.push(next);
+    this.inboxUnreads++;
 
-    if(this.readEmails === 21) {
+    if(this.readEmails === 23) {
+      this.draftsUnreads += 2;
       this.draftEmails.push(  
         {
           to: 'Henry Cooper',
@@ -91,15 +119,30 @@ export class EmailComponent implements OnInit {
   		this.emails.forEach(element => {
   			element.blurb = element.text.substring(0, 59);
   			if(element.text.length > 60) element.blurb += "...";
+
   			element.expanded = false;
         element.read = false;
 
         // Distribute into mailbox arrays.
-        if(element.mailbox === 'inbox') this.inboxEmails.push(element);
-        if(element.mailbox === 'drafts') this.draftEmails.push(element);
-        if(element.mailbox === 'sent') this.sentEmails.push(element);
-        if(element.mailbox === 'trash') this.trashEmails.push(element);
-        if(element.mailbox === 'incoming') this.incomingEmails.push(element);
+        if(element.mailbox === 'inbox') {
+          this.inboxEmails.push(element);
+          this.inboxUnreads++;
+        }
+        if(element.mailbox === 'drafts') {
+          this.draftEmails.push(element);
+          this.draftsUnreads++;
+        }
+        if(element.mailbox === 'sent') {
+          this.sentEmails.push(element);
+          this.sentUnreads++;
+        }
+        if(element.mailbox === 'trash') {
+          this.trashEmails.push(element);
+          this.trashUnreads++;
+        }
+        if(element.mailbox === 'incoming') {
+          this.incomingEmails.push(element);
+        }
   		});
   	});
   }

@@ -5,16 +5,16 @@
 	</div>
 	<div class="mailboxes">
 		<div class="mailbox" (click)="selectMailbox('inbox')">
-			Inbox
+			Inbox <span class="unread-total">{{inboxUnreads}}</span>
 		</div>
 		<div class="mailbox" (click)="selectMailbox('sent')">
-			Sent
+			Sent <span class="unread-total">{{sentUnreads}}</span>
 		</div>
 		<div class="mailbox" (click)="selectMailbox('drafts')">
-			Drafts
+			Drafts <span class="unread-total">{{draftsUnreads}}</span>
 		</div>
 		<div class="mailbox" (click)="selectMailbox('trash')">
-			Trash
+			Trash <span class="unread-total">{{trashUnreads}}</span>
 		</div>
 	</div>
 	<div *ngIf="emails.length" class="email-list">
