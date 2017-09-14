@@ -7,17 +7,6 @@
 	box-shadow: 2px 2px 10px -1px black;
 }
 
-.results {
-	animation-name: results;
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes results {
-	0% { opacity: 1.0; }
-	100% { opacity: 0; }
-}
-
 .header {
 	width: 799px;
 	height: 40px;

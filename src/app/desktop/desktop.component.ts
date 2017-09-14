@@ -15,6 +15,7 @@ export class DesktopComponent implements OnInit {
   @ViewChild(DocumentComponent) documents;
 
   results = false;
+  reply;
 
   showLightMail() { 
   	this.email.showLightMail(); 
@@ -26,13 +27,13 @@ export class DesktopComponent implements OnInit {
   	this.documents.showDocuments();
   }
 
-  changeToResults() {
-    this.results = true;
-  }
-
   constructor(private emailService: EmailService) { }
 
   ngOnInit() {
-
+    this.emailService.replyObservable()
+      .subscribe(reply => {
+         this.reply = reply;
+         this.results = true;
+      });
   }
 }

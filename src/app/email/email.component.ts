@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { EmailService } from '../email-service.service';
 
@@ -8,13 +8,6 @@ import { EmailService } from '../email-service.service';
   styleUrls: ['./email.component.css']
 })
 export class EmailComponent implements OnInit {
-
-  // Used to call method in parent component
-  @Output() results = new EventEmitter<string>();
-
-  callParent() {
-    this.results.next('results');
-  }
 
   // Mailboxes
   emails = [];
@@ -104,7 +97,7 @@ export class EmailComponent implements OnInit {
   sendReply(email) {
     this.emailService.postReply(email)
       .subscribe(response => {
-        this.callParent();
+        this.emailService.passReply(email);
       });
   }
 

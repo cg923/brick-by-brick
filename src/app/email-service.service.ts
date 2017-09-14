@@ -9,12 +9,23 @@ export class EmailService {
   // Passing emails for notification purposes.
   private passedEmail = new Subject<any>();
 
+  // Passing email for end of game.
+  private passedReply = new Subject<any>();
+
   passEmail(email) {
   	this.passedEmail.next({email: email})
   }
 
   emailObservable(): Observable<any> {
   	return this.passedEmail.asObservable();
+  }
+
+  passReply(reply) {
+    this.passedReply.next({reply: reply});
+  }
+
+  replyObservable(): Observable<any> {
+    return this.passedReply.asObservable();
   }
 
   // HTTP requests to the back end.
