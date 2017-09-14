@@ -29,7 +29,8 @@ export class EmailService {
   }
 
   // HTTP requests to the back end.
-  baseUrl = 'http://localhost:3000';
+  //baseUrl = 'http://localhost:3000';
+  baseUrl = "";
 
   allEmails() {
   	return this.http.get(`${this.baseUrl}/emails`);
