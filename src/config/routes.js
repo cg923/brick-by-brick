@@ -9,9 +9,12 @@ router.route('/emails')
 	.get(emailsController.getEmails);
 
 router.route('/replies')
-	.post(statsController.postReply);
+	.post(emailsController.postReply);
 
 router.route('/documents')
 	.get(docsController.getDocuments);
+
+router.route('/stats')
+	.get(statsController.getStats);
 
 module.exports = router;

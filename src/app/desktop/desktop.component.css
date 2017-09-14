@@ -86,13 +86,27 @@
 }
 
 .share-buttons {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	text-align: center;
 }
 
 .learn-more {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	text-align: center;
+}
+
+.play-again {
+	text-align: center;
+	margin-bottom: 300px;
+}
+
+input[type="submit"] {
+	width: 120px;
+	height: 30px;
+	background: gray;
+	color: white;
+	border: none;
+	border-radius: 5px;
 }
 
 li {

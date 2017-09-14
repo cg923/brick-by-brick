@@ -21,10 +21,6 @@
 		<span class="email-text">{{finalReply.text}}</span>
 	</div>
 	<div class="down-arrow"><img class="down-icon" src="assets/down_arrow.png"></div>
-	<div class="share-buttons">
-		<h2>Share Brick-by-Brick</h2>
-		<share-buttons [linkedIn]="false" [pinterest]="false" [tumblr]="false" [whatsApp]="false" [stumbleUpOn]="false"></share-buttons>
-	</div>
 	<div class="learn-more">
 		<h2>Learn More</h2>
 		<p>The e-mails and documents in Brick-by-Brick are real.  They are entirely unaltered, except for names, and in one case--my father's final response--where only one of the two possible endings is true.</p>
@@ -35,6 +31,15 @@
 			<li><a href="http://www.thetrevorproject.org/">The Trevor Project</a></li>
 			<li><a href="https://www.hrc.org/">The Human Rights Campaign</a></li>
 		</ul>
+	</div>
+	<div class="share-buttons">
+		<h2>Share Brick-by-Brick</h2>
+		<share-buttons [linkedIn]="false" [pinterest]="false" [tumblr]="false" [whatsApp]="false" [stumbleUpOn]="false"></share-buttons>
+	</div>
+	<div class="play-again">
+		<form action="/" method="GET">
+		    <input type="submit" value="Play Again" />
+		</form>
 	</div>
 </div>
 
