@@ -13,6 +13,9 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({'extended': 'true'}));
 app.use(bodyParser.json());
 
+let distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 var routes = require('./config/routes');
 app.use(routes);
 
