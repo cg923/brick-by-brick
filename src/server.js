@@ -17,7 +17,7 @@ var routes = require('./config/routes');
 app.use(routes);
 
 app.get('/', function(req, res) {
-  res.sendFile('./index.html');
+  res.send('Hola');
 });
 
 app.listen(process.env.PORT || 3000, () => {

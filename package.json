@@ -2,9 +2,9 @@
   "name": "brick-by-brick",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "src/server.js",
   "scripts": {
     "ng": "ng",
-    "prestart": "node src/server.js",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
