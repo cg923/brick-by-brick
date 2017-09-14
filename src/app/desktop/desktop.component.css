@@ -86,8 +86,17 @@
 }
 
 .share-buttons {
-	margin-bottom: 200px;
+	margin-bottom: 100px;
 	text-align: center;
+}
+
+.learn-more {
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+li {
+	text-align: left;
 }
 
 @keyframes results {
