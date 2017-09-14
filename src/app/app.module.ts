@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 // Services
 import { EmailService } from './email-service.service';
@@ -26,7 +27,8 @@ import { NotificationComponent } from './notification/notification.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    ShareButtonsModule.forRoot()
   ],
   providers: [EmailService, DocumentService],
   bootstrap: [AppComponent]

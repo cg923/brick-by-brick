@@ -69,9 +69,35 @@
 	display: block;
 }
 
+.down-arrow {
+	position: relative;
+	margin: 200px auto 250px auto;
+	animation-name: bounce;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+.down-icon {
+	display: block;
+	margin: 0 auto;
+	width: 25px;
+}
+
+.share-buttons {
+	margin-bottom: 200px;
+	text-align: center;
+}
+
 @keyframes results {
 	0% { opacity: 1.0; }
 	100% { opacity: 0; }
+}
+
+@keyframes bounce {
+	0% { top: 0px; }
+	100% { top: 5px; }
 }
 
 @media only screen and (max-width: 800px) {

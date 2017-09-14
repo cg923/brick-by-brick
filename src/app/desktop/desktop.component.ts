@@ -16,6 +16,7 @@ export class DesktopComponent implements OnInit {
 
   results = false;
   finalReply = null;
+  replyOption = null;
 
   showLightMail() { 
   	this.email.showLightMail(); 
@@ -27,8 +28,9 @@ export class DesktopComponent implements OnInit {
   	this.documents.showDocuments();
   }
 
-  displayFinalReply(email) {
-    if(email.replyOption === 1) {
+  displayFinalReply(replyOption) {
+    console.log(replyOption);
+    if(replyOption === 1) {
       this.finalReply = {
         to: 'David Cooper',
         from: 'Henry Cooper',
@@ -53,8 +55,9 @@ export class DesktopComponent implements OnInit {
     this.emailService.replyObservable()
       .subscribe(reply => {
         this.results = true;
+        this.replyOption = reply.reply.replyOption;
         setTimeout(() => {
-          this.displayFinalReply(reply);
+          this.displayFinalReply(this.replyOption);
         }, 3000);
       });
   }
