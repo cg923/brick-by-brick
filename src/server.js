@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 var routes = require('./config/routes');
 app.use(routes);
 
-app.get('/', function(req, res) {
-  res.send('Hola');
-});
+// app.get('/', function(req, res) {
+//   res.send('Hola');
+// });
 
 app.listen(process.env.PORT || 3000, () => {
 	console.log('listening!');
