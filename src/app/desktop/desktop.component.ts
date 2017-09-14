@@ -15,7 +15,7 @@ export class DesktopComponent implements OnInit {
   @ViewChild(DocumentComponent) documents;
 
   results = false;
-  reply;
+  finalReply = null;
 
   showLightMail() { 
   	this.email.showLightMail(); 
@@ -27,13 +27,35 @@ export class DesktopComponent implements OnInit {
   	this.documents.showDocuments();
   }
 
+  displayFinalReply(email) {
+    if(email.replyOption === 1) {
+      this.finalReply = {
+        to: 'David Cooper',
+        from: 'Henry Cooper',
+        subject: 'Re: Update?',
+        date: '9/6/17',
+        text: "David, this is good news indeed. Love, Dad"
+      };
+    } else {
+      this.finalReply = {
+        to: 'Dana Cooper',
+        from: 'Henry Cooper',
+        subject: 'Re: Update?',
+        date: '9/6/17',
+        text: "David/Dana, this is good news indeed. I would prefer to call you David, but if that's a problem, you should let me know. Love, Dad"
+      }
+    }
+  }
+
   constructor(private emailService: EmailService) { }
 
   ngOnInit() {
     this.emailService.replyObservable()
       .subscribe(reply => {
-         this.reply = reply;
-         this.results = true;
+        this.results = true;
+        setTimeout(() => {
+          this.displayFinalReply(reply);
+        }, 3000);
       });
   }
 }

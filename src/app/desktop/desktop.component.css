@@ -6,17 +6,6 @@
 	height: 100vh;
 }
 
-.results {
-	animation-name: results;
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes results {
-	0% { opacity: 1.0; }
-	100% { opacity: 0; }
-}
-
 .email-icon {
 	position: absolute;
 	top: 20px;
@@ -34,4 +23,61 @@
 
 .icon {
 	width: 80px;
+}
+
+.results {
+	animation-name: results;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+.final {
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.final-reply {
+	animation-name: results;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	animation-direction: reverse;
+}
+
+.email-from {
+	font-size: 18px;
+}
+
+.email-to {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.email-date {
+	float: right;
+	margin-right: 20px;
+}
+
+.email-subject {
+	display: block;
+}
+
+.email-body {
+	display: block;
+}
+
+@keyframes results {
+	0% { opacity: 1.0; }
+	100% { opacity: 0; }
+}
+
+@media only screen and (max-width: 800px) {
+	.final {
+		left: 5%;
+		top: 20%;
+		width: 90%;
+	}
 }

@@ -13,8 +13,12 @@
 	<app-notification></app-notification>
 </div>
 
-<div class="results">
+<div *ngIf="finalReply" class="final" [ngClass]="{'final-reply': finalReply}">
 	<div class="response">
+		<span class="email-from">{{finalReply.from}}</span>
+		<span class="email-date">{{finalReply.date}}</span>
+		<span class="email-subject">{{finalReply.subject}}</span>
+		<span class="email-text">{{finalReply.text}}</span>
 	</div>
 </div>
 
