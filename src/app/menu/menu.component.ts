@@ -9,6 +9,11 @@ export class MenuComponent implements OnInit {
 
   currentTime;
   formattedTime;
+  menuVisible = false;
+
+  showMenu() {
+    this.menuVisible = !this.menuVisible;
+  }
 
   constructor() { }
 

@@ -13,12 +13,12 @@ export class ResultsComponent implements OnInit {
   // ----- CHART ----- //
   results = [
     {
-      "name": "...",
+      "name": "See you soon!!",
       "value": 1
     },
     {
-      "name": "Love, Dana",
-      "value": 2
+      "name": "See you soon!!\nLove, Dana",
+      "value": 1
     }
   ];
   view: any[] = [400, 400];

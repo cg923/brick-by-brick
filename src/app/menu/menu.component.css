@@ -13,6 +13,7 @@
 	border-right: 1px solid black;
 	text-align: center;
 	vertical-align: middle;
+	box-shadow: 2px 2px 5px 0px black;
 }
 
 .go {
