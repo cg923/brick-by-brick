@@ -66,12 +66,6 @@ export class DesktopComponent implements OnInit {
         text: "David/Dana, this is good news indeed. I would prefer to call you David, but if that's a problem, you should let me know. Love, Dad"
       }
     }
-
-    // Pull statistics
-    this.emailService.stats()
-      .subscribe(response => {
-        console.log(response);
-      });
   }
 
   constructor(private emailService: EmailService) { }

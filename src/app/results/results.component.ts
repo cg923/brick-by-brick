@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmailService } from '../email-service.service';
 
 @Component({
   selector: 'app-results',
@@ -10,14 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class ResultsComponent implements OnInit {
 
   // ----- CHART ----- //
-  single = [
-      {
-      "name": "Germany",
-      "value": 8940000
+  results = [
+    {
+      "name": "...",
+      "value": 1
     },
     {
-      "name": "USA",
-      "value": 5000000
+      "name": "Love, Dana",
+      "value": 2
     }
   ];
   view: any[] = [400, 400];
@@ -35,13 +36,30 @@ export class ResultsComponent implements OnInit {
   doughnut = false;
 
   onSelect(event) {
-    console.log(event);
   }
 
-  constructor() {
+  constructor(private emailService: EmailService) {
   }
 
   ngOnInit() {
+    // Pull statistics
+    this.emailService.stats()
+      .subscribe(response => {
+        console.log(response["_body"]);
+        response = JSON.parse(response["_body"]);
+        console.log(response[0]);
+        console.log(response[1]);
+        this.results = [
+          {
+            "name": "...",
+            "value": response[0]
+          },
+          {
+            "name": "Love, Dana",
+            "value": response[1]
+          }
+        ]
+      });
   }
 
 }
