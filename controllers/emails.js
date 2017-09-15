@@ -11,7 +11,7 @@ function getEmails(req, res) {
 	});
 }
 
-// GET /emails:id
+// GET /emails/:id
 function getEmail(req, res) {
 	db.Email.findOne({_id: req.params.id}, (err, email) => {
 		if (err) throw err;
@@ -28,17 +28,18 @@ function postEmail(req, res) {
 	});
 }
 
-// PUT /emails:id
+// PUT /emails/:id
 function updateEmail(req, res) {
 	if (typeof(req.body) === 'string') req.body = JSON.parse(req.body);
 	db.Email.findOne({_id: req.params.id}, (err, email) => {
 		if (err) throw err;
-		email.to = req.body.to;
-		email.from = req.body.from;
-		email.subject = req.body.subject;
-		email.date = req.body.date;
-		email.text = req.body.text;
-		email.mailbox = req.body.mailbox;
+
+		email.to 		= req.body.to;
+		email.from 		= req.body.from;
+		email.subject 	= req.body.subject;
+		email.date 		= req.body.date;
+		email.text 		= req.body.text;
+		email.mailbox 	= req.body.mailbox;
 
 		email.save((err, email) => {
 			if (err) throw err;
@@ -47,9 +48,12 @@ function updateEmail(req, res) {
 	});
 }
 
-// DELETE /emails:id
+// DELETE /emails/:id
 function deleteEmail(req, res) {
-
+	db.Email.remove({_id: req.params.id}, (err, email) => {
+		if (err) throw err;
+		res.json(email);
+	});
 }
 
 // --------- Replies ---------- //
