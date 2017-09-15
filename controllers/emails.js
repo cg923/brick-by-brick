@@ -13,7 +13,6 @@ function getEmails(req, res) {
 
 // GET /emails:id
 function getEmail(req, res) {
-	console.log('hola');
 	db.Email.findOne({_id: req.params.id}, (err, email) => {
 		if (err) throw err;
 		res.json(email);
@@ -22,7 +21,11 @@ function getEmail(req, res) {
 
 // POST /emails
 function postEmail(req, res) {
-
+	if (typeof(req.body) === 'string') req.body = JSON.parse(req.body);
+	db.Email.create(req.body, (err, email) => {
+		if (err) throw err;
+		res.json(email);
+	});
 }
 
 // PUT /emails:id
