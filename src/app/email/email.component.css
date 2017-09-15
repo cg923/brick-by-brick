@@ -292,5 +292,11 @@ pre {
 
     .reply {
     	width: 80%;
+    	height: 500px;
+    }
+
+    .reply-option {
+    	display: block;
+    	margin: 0 auto;
     }
 }
