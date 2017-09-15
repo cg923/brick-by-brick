@@ -1,18 +1,45 @@
 const bodyParser 	= require('body-parser');
 const db 			= require('../models');
 
+// --------- E-mails ---------- //
+// ---------------------------- //
 // GET /emails
-// INDEX
 function getEmails(req, res) {
-	db.Email.find({}, function(err, emails) {
+	db.Email.find({}, (err, emails) => {
 		if (err) throw err;
 		res.json(emails);
 	});
 }
 
+// GET /emails:id
+function getEmail(req, res) {
+	console.log('hola');
+	db.Email.findOne({_id: req.params.id}, (err, email) => {
+		if (err) throw err;
+		res.json(email);
+	});
+}
+
+// POST /emails
+function postEmail(req, res) {
+
+}
+
+// PUT /emails:id
+function updateEmail(req, res) {
+
+}
+
+// DELETE /emails:id
+function deleteEmail(req, res) {
+
+}
+
+// --------- Replies ---------- //
+// ---------------------------- //
 // GET /replies
 function getReplies(req, res) {
-	db.Reply.find({}, function(err, replies) {
+	db.Reply.find({}, (err, replies) => {
 		if (err) throw err;
 		res.json(replies);
 	});
@@ -51,6 +78,10 @@ function postReply(req, res, next) {
 
 module.exports = {
 	getEmails: getEmails,
+	getEmail: getEmail,
+	postEmail: postEmail,
+	updateEmail: updateEmail,
+	deleteEmail: deleteEmail,
 	getReplies: getReplies,
 	postReply: postReply
 };
