@@ -40,6 +40,10 @@ export class EmailService {
     return this.http.post(`${this.baseUrl}/replies`, email);
   }
 
+  stats() {
+    return this.http.get(`${this.baseUrl}/stats`);
+  }
+
   constructor(private http: Http) { }
 
 }

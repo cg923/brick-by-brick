@@ -1,4 +1,8 @@
-<div class="background" [ngClass]="{'results': results}">
+<div class="title" [ngClass]="{'hidden': hideTitle}">
+	<h1>BRICK BY BRICK</h1>
+</div>
+
+<div class="background" [ngClass]="{'results': results, 'title-screen': titleScreen, 'fade-in': fadeIn}">
 	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
 		<span class="icon-name">Light-Mail</span>
@@ -20,5 +24,7 @@
 		<span class="email-subject">{{finalReply.subject}}</span>
 		<span class="email-text">{{finalReply.text}}</span>
 	</div>
+	<div class="down-arrow" [ngClass]="{'show-arrow': showArrow}"><img class="down-icon" src="assets/down_arrow.png"></div>
+	<app-results></app-results>
 </div>
 

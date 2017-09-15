@@ -62,8 +62,8 @@ export class EmailComponent implements OnInit {
 
     // Triggers for incoming e-mails
     if(this.readEmails === 4 ||
-       this.readEmails === 18 ||
-       this.readEmails === 23) {
+       this.readEmails === 12 ||
+       this.readEmails === 19) {
       this.incomingMail();
     }
   }
@@ -91,7 +91,7 @@ export class EmailComponent implements OnInit {
         text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDana",
         mailbox: 'drafts'
     });
-    this.emailService.passEmail(this.draftEmails[0]);
+    // this.emailService.passEmail(this.draftEmails[0]);
   }
 
   sendReply(email) {
@@ -140,8 +140,13 @@ export class EmailComponent implements OnInit {
       .subscribe(emails => {
   		this.emails = emails.json();
   		this.emails.forEach(element => {
+        // Create blurb
   			element.blurb = element.text.substring(0, 59);
   			if(element.text.length > 60) element.blurb += "...";
+
+        // Create subject blurb
+        element.subjectBlurb = element.subject.substring(0, 30);
+        if(element.subject.length > 30) element.subjectBlurb += "...";
 
   			element.expanded = false;
         element.read = false;

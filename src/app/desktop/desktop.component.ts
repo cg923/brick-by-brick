@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { EmailComponent } from '../email/email.component';
 import { DocumentComponent } from '../document/document.component';
 import { MenuComponent } from '../menu/menu.component';
 import { NotificationComponent } from '../notification/notification.component';
+import { ResultsComponent } from '../results/results.component';
 import { EmailService } from '../email-service.service';
 
 @Component({
@@ -11,13 +12,36 @@ import { EmailService } from '../email-service.service';
   styleUrls: ['./desktop.component.css']
 })
 export class DesktopComponent implements OnInit {
+
+  showArrow = true;
+  titleScreen = true;
+  hideTitle = false;
+  fadeIn = false;
+
+  @HostListener("window:scroll", ["$event"])
+
+  // This function hides the scroll arrow when user
+  // has reached the bottom of the document.
+  onWindowScroll() {
+    if(!this.results) return;
+
+    let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+
+    // TODO - Booo hardcoded numbers >:(
+    if(pos >= 2500) {
+      this.showArrow = false;
+    }
+  }
+
   @ViewChild(EmailComponent) email;
   @ViewChild(DocumentComponent) documents;
 
   results = false;
   finalReply = null;
+  replyOption = null;
 
   showLightMail() { 
+    this.hideTitle = true;
   	this.email.showLightMail(); 
   	this.documents.hideDocuments();
   }
@@ -27,8 +51,9 @@ export class DesktopComponent implements OnInit {
   	this.documents.showDocuments();
   }
 
-  displayFinalReply(email) {
-    if(email.replyOption === 1) {
+  displayFinalReply(replyOption) {
+    // Choose final response
+    if(replyOption === 1) {
       this.finalReply = {
         to: 'David Cooper',
         from: 'Henry Cooper',
@@ -50,11 +75,21 @@ export class DesktopComponent implements OnInit {
   constructor(private emailService: EmailService) { }
 
   ngOnInit() {
+    // Display title screen and then transition
+    setTimeout(() => {
+      this.titleScreen = false;
+      this.fadeIn = true;
+      setTimeout(() => {
+        this.fadeIn = false;
+      }, 3000);
+    }, 4000);
+
     this.emailService.replyObservable()
       .subscribe(reply => {
         this.results = true;
+        this.replyOption = reply.reply.replyOption;
         setTimeout(() => {
-          this.displayFinalReply(reply);
+          this.displayFinalReply(this.replyOption);
         }, 3000);
       });
   }

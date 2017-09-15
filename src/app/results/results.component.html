@@ -1,0 +1,35 @@
+<div class="content">
+	<div class="learn-more">
+		<h2>Learn More</h2>
+		<p>The e-mails and documents in Brick By Brick are real.  They are entirely unaltered, except for names, identifying details, and in one case--my father's final response--where only one of the two possible endings is true.</p>
+
+		<p>If you found the story told through Brick By Brick meaningful, please consider donating to an LGBT positive charity like:</p>
+		<ul>
+			<li><a href="http://www.transunitedfund.org/">The Trans United Fund</a></li>
+			<li><a href="http://www.thetrevorproject.org/">The Trevor Project</a></li>
+			<li><a href="https://www.hrc.org/">The Human Rights Campaign</a></li>
+		</ul>
+	</div>
+	<div class="share-buttons">
+		<h2>Share Brick By Brick</h2>
+		<share-buttons [linkedIn]="false" [pinterest]="false" [tumblr]="false" [whatsApp]="false" [stumbleUpOn]="false"></share-buttons>
+	</div>
+	<div class="play-again">
+		<form action="/" method="GET">
+		    <input type="submit" value="Play Again" />
+		</form>
+	</div>
+	<div class="chart">
+		<ngx-charts-pie-chart
+	      [view]="view"
+	      [scheme]="colorScheme"
+	      [results]="results"
+	      [legend]="showLegend"
+	      [explodeSlices]="explodeSlices"
+	      [labels]="showLabels"
+	      [doughnut]="doughnut"
+	      [gradient]="gradient"
+	      (select)="onSelect($event)">
+	    </ngx-charts-pie-chart>
+	</div>
+</div>

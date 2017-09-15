@@ -38,6 +38,10 @@
 	overflow-y: auto;
 }
 
+.email-list::-webkit-scrollbar { 
+  display: none;
+}
+
 .email-expansion {
 	width: 578px;
 	height: 300px;
@@ -282,7 +286,17 @@ pre {
     	padding: 10px 0px 0px 0px;
     }
 
+    .email-body {
+    	padding: 10px;
+    }
+
     .reply {
     	width: 80%;
+    	height: 500px;
+    }
+
+    .reply-option {
+    	display: block;
+    	margin: 0 auto;
     }
 }
