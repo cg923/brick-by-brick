@@ -1,3 +1,4 @@
+
 .learn-more {
 	margin: 550px auto;
 	text-align: center;
@@ -14,7 +15,7 @@
 }
 
 .chart {
-	margin-bottom: 400px;
+	margin-bottom: 800px;
 }
 
 input[type="submit"] {
@@ -26,6 +27,17 @@ input[type="submit"] {
 	border-radius: 5px;
 }
 
+input[type="submit"]:hover {
+	background: #ADAEAD;
+}
+
 li {
-	text-align: left;
+	list-style: none;
+	text-align: center;
+	margin-left: -30px;
+}
+
+a {
+	text-decoration: none;
+	color: gray;
 }

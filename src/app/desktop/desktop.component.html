@@ -20,7 +20,7 @@
 		<span class="email-subject">{{finalReply.subject}}</span>
 		<span class="email-text">{{finalReply.text}}</span>
 	</div>
-	<div class="down-arrow"><img class="down-icon" src="assets/down_arrow.png"></div>
+	<div class="down-arrow" [ngClass]="{'show-arrow': showArrow}"><img class="down-icon" src="assets/down_arrow.png"></div>
 	<app-results></app-results>
 </div>
 

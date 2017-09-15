@@ -9,15 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class ResultsComponent implements OnInit {
 
+  // ----- CHART ----- //
   single = [
-  	  {
-    	"name": "Germany",
-    	"value": 8940000
-	  },
-	  {
-	    "name": "USA",
-	    "value": 5000000
-	  }
+      {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    }
   ];
   view: any[] = [400, 400];
 

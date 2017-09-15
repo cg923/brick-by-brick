@@ -70,6 +70,7 @@
 }
 
 .down-arrow {
+	visibility: hidden;
 	position: fixed;
 	left: 50%;
 	animation-name: bounce;
@@ -77,6 +78,10 @@
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-timing-function: ease-in-out;
+}
+
+.show-arrow {
+	visibility: visible;
 }
 
 .down-icon {
