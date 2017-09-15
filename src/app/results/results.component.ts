@@ -17,19 +17,15 @@ export class ResultsComponent implements OnInit {
 	  {
 	    "name": "USA",
 	    "value": 5000000
-	  },
-	  {
-	    "name": "France",
-	    "value": 7200000
 	  }
   ];
-  view: any[] = [700, 400];
+  view: any[] = [400, 400];
 
   // options
-  showLegend = true;
+  showLegend = false;
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['red', 'blue']
   };
 
   // pie
