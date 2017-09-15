@@ -14,6 +14,9 @@ import { EmailService } from '../email-service.service';
 export class DesktopComponent implements OnInit {
 
   showArrow = true;
+  titleScreen = true;
+  hideTitle = false;
+  fadeIn = false;
 
   @HostListener("window:scroll", ["$event"])
 
@@ -38,6 +41,7 @@ export class DesktopComponent implements OnInit {
   replyOption = null;
 
   showLightMail() { 
+    this.hideTitle = true;
   	this.email.showLightMail(); 
   	this.documents.hideDocuments();
   }
@@ -71,6 +75,15 @@ export class DesktopComponent implements OnInit {
   constructor(private emailService: EmailService) { }
 
   ngOnInit() {
+    // Display title screen and then transition
+    setTimeout(() => {
+      this.titleScreen = false;
+      this.fadeIn = true;
+      setTimeout(() => {
+        this.fadeIn = false;
+      }, 3000);
+    }, 4000);
+
     this.emailService.replyObservable()
       .subscribe(reply => {
         this.results = true;

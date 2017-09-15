@@ -1,4 +1,8 @@
-<div class="background" [ngClass]="{'results': results}">
+<div class="title" [ngClass]="{'hidden': hideTitle}">
+	<h1>BRICK BY BRICK</h1>
+</div>
+
+<div class="background" [ngClass]="{'results': results, 'title-screen': titleScreen, 'fade-in': fadeIn}">
 	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
 		<span class="icon-name">Light-Mail</span>

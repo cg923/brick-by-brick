@@ -91,7 +91,7 @@ export class EmailComponent implements OnInit {
         text: "IBM is flying me to VT for an interview!!\n\nSee you soon!\nLove,\nDana",
         mailbox: 'drafts'
     });
-    this.emailService.passEmail(this.draftEmails[0]);
+    // this.emailService.passEmail(this.draftEmails[0]);
   }
 
   sendReply(email) {

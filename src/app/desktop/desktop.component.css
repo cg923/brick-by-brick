@@ -6,6 +6,33 @@
 	height: 100vh;
 }
 
+.title-screen {
+	opacity: 0;
+}
+
+.title {
+	z-index: -1;
+	width: 100%;
+	top: 100px;
+	position: absolute;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title.hidden {
+	visibility: hidden;
+}
+
+.title h1 {
+	font-size: 100px;
+}
+
+.fade-in {
+	animation-name: fadeIn;
+	animation-duration: 3s;
+	animation-direction: forwards;
+}
+
 .email-icon {
 	position: absolute;
 	top: 20px;
@@ -98,6 +125,11 @@
 @keyframes bounce {
 	0% { bottom: 5px; }
 	100% { bottom: 10px; }
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1.0; }
 }
 
 @media only screen and (max-width: 800px) {
