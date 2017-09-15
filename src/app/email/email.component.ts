@@ -62,8 +62,8 @@ export class EmailComponent implements OnInit {
 
     // Triggers for incoming e-mails
     if(this.readEmails === 4 ||
-       this.readEmails === 18 ||
-       this.readEmails === 23) {
+       this.readEmails === 12 ||
+       this.readEmails === 19) {
       this.incomingMail();
     }
   }
