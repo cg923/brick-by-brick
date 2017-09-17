@@ -82,7 +82,7 @@ export class DesktopComponent implements OnInit {
       setTimeout(() => {
         this.fadeIn = false;
       }, 3000);
-    }, 4000);
+    }, 3000);
 
     this.emailService.replyObservable()
       .subscribe(reply => {
