@@ -8,6 +8,9 @@ const statsController 	= require('../controllers/stats');
 // --------- E-mails ---------- //
 // ---------------------------- //
 
+// These routes exist to satisfy a project requirement
+// and are not to be used, except for INDEX.
+
 // INDEX & CREATE
 router.route('/emails')
 	.get(emailsController.getEmails)
