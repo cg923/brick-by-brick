@@ -5,7 +5,11 @@
 
 <!-- CONTEXT MENU -->
 <div *ngIf="menuOpen" class="context-menu" [style.top]="menuTop" [style.left]="menuLeft">
-	<span class="menu-item">Show Hidden Files</span>
+	<div class="menu-item-deselected">New Folder</div>
+	<hr>
+	<div class="menu-item-deselected">Get Info</div>
+	<hr>
+	<div class="menu-item" (click)="showFiles()">Show Hidden Files</div>
 </div>
 
 <!-- DESKTOP -->

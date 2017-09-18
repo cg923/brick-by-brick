@@ -5,7 +5,7 @@
 	</div>
 	<div class="contents">
 		<div *ngFor="let document of documents" class="doc" (click)="openDocument(document)">
-			<img src="assets/document.png" class="doc-icon">
+			<img src="assets/document.png" [ngClass]="{'hidden-file': document.hidden}" class="doc-icon">
 			<div class="doc-title">{{document.title}}</div>
 		</div>
 	</div>

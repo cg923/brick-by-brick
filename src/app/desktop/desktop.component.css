@@ -35,9 +35,25 @@
 
 .context-menu {
 	position: absolute;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
 	background: white;
+}
+
+.menu-item {
+	width: 100%;
+	height: 20px;
+}
+
+.menu-item-deselected {
+	color: gray;
+}
+
+.menu-item:hover {
+	background: #CECCC7;
 }
 
 .email-icon {

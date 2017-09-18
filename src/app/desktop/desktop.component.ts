@@ -23,7 +23,7 @@ export class DesktopComponent implements OnInit {
   menuTop = "0px";
   menuOpen = false;
 
-  // EVENT LISTENERS
+  // WINDOW EVENTS
   @HostListener("window:scroll", ["$event"])
 
   // This function hides the scroll arrow when user
@@ -40,6 +40,7 @@ export class DesktopComponent implements OnInit {
     }
   }
 
+  // MENU
   openMenu($event) {
     // Disable OS menu
     $event.preventDefault();
@@ -56,6 +57,11 @@ export class DesktopComponent implements OnInit {
 
   closeMenu() {
     this.menuOpen = false;
+  }
+
+  showFiles() {
+    this.menuOpen = false;
+    this.documents.showHiddenFiles();
   }
 
   // OTHER
