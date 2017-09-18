@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 var Email = mongoose.Schema({
+	order: Number,
   	to: String,
   	from: String,
   	subject: String,
