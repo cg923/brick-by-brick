@@ -24,6 +24,7 @@ Reply.remove({}, function(err) {
 // Reseed
 let emails = [
 	{
+    order: 1,
 		to: 'David Cooper',
 		from: 'Henry Cooper',
 		subject: 'Letter',
@@ -32,6 +33,7 @@ let emails = [
 	  mailbox: 'inbox'
   },
 	{
+    order: 2,
 		to: 'David Cooper',
 		from: 'Henry Cooper',
 		subject: 'News',
@@ -40,6 +42,7 @@ let emails = [
 	  mailbox: 'inbox'
 	},
   {
+    order: 3,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Elliot',
@@ -48,6 +51,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 4,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Uncle Elliot',
@@ -56,6 +60,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 5,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Re: Re: Uncle Elliot',
@@ -64,6 +69,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 6,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Re: Re: Re: Uncle Elliot',
@@ -72,6 +78,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 7,
     to: 'David Cooper',
     from: 'Laura Cooper',
     subject: 'Dad',
@@ -80,6 +87,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 8,
     to: 'Dana Cooper',
     from: 'Laura Cooper',
     subject: 'Hmmm',
@@ -88,6 +96,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 9,
     to: 'Dana Cooper',
     from: 'Laura Cooper',
     subject: 'Check out "60 minutes overtime. On transgender',
@@ -96,6 +105,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 10,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'NYTimes: Chicken Tetrazzini, the Casserole Even Snobs Love',
@@ -104,6 +114,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 11,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Thanksgiving',
@@ -112,6 +123,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 12,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Re: Re: Thanksgiving',
@@ -120,6 +132,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 13,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'T Shirt',
@@ -128,6 +141,7 @@ let emails = [
     mailbox: 'inbox'
   },
   {
+    order: 14,
     to: 'David Cooper',
     from: 'Henry Cooper',
     subject: 'Update?',
@@ -136,6 +150,7 @@ let emails = [
     mailbox: 'incoming'
   },
   {
+    order: 15,
     to: 'Dana Cooper',
     from: 'Mini Martinez',
     subject: 'Re: HOLY SHITTTTTTTT',
@@ -144,6 +159,7 @@ let emails = [
     mailbox: 'incoming'
   },
   {
+    order: 16,
     to: 'Dana Cooper',
     from: 'Netflix',
     subject: 'David, now is a great time to restart your membership',
@@ -152,6 +168,7 @@ let emails = [
     mailbox: 'incoming'
   },
   {
+    order: 17,
     to: 'Henry Cooper',
     from: 'David Cooper',
     subject: 'Re: Letter',
@@ -160,6 +177,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 18,
     to: 'Henry Cooper',
     from: 'David Cooper',
     subject: 'Re: Elliot',
@@ -168,6 +186,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 19,
     to: 'Henry Cooper',
     from: 'David Cooper',
     subject: 'Re: Uncle Elliot',
@@ -176,6 +195,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 20,
     to: 'Henry Cooper',
     from: 'Dana Cooper',
     subject: 'Re: Re: Uncle Elliot',
@@ -184,6 +204,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 21,
     to: 'Henry Cooper',
     from: 'David Cooper',
     subject: 'Re: Re: Uncle Elliot',
@@ -192,6 +213,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 22,
     to: 'Henry Cooper',
     from: 'Dana Cooper',
     subject: 'Re: Thanksgiving',
@@ -200,6 +222,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 23,
     to: 'Henry Cooper',
     from: 'Dana Cooper',
     subject: 'Re: T Shirt',
@@ -208,6 +231,7 @@ let emails = [
     mailbox: 'sent'
   },
   {
+    order: 24,
     to: 'Mini Martinez',
     from: 'Dana Cooper',
     subject: 'HOLY SHITTTTTTTT',

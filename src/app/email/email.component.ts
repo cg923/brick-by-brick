@@ -139,6 +139,12 @@ export class EmailComponent implements OnInit {
   	this.emailService.allEmails()
       .subscribe(emails => {
   		this.emails = emails.json();
+
+      // Sort emails because Heroku is stupid.
+      this.emails.sort((a, b) => {
+        return a.order - b.order;
+      });
+      
   		this.emails.forEach(element => {
         // Create blurb
   			element.blurb = element.text.substring(0, 59);
