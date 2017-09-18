@@ -18,6 +18,12 @@
 	margin-bottom: 800px;
 }
 
+footer {
+	text-align: center;
+	color: gray;
+	margin-bottom: 100px;
+}
+
 input[type="submit"] {
 	width: 120px;
 	height: 30px;
