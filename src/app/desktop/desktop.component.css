@@ -33,6 +33,13 @@
 	animation-direction: forwards;
 }
 
+.context-menu {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: white;
+}
+
 .email-icon {
 	position: absolute;
 	top: 20px;

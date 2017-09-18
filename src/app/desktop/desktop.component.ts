@@ -13,11 +13,17 @@ import { EmailService } from '../email-service.service';
 })
 export class DesktopComponent implements OnInit {
 
+  // VIEWS
   showArrow = true;
   titleScreen = true;
   hideTitle = false;
   fadeIn = false;
 
+  menuLeft = "0px";
+  menuTop = "0px";
+  menuOpen = false;
+
+  // EVENT LISTENERS
   @HostListener("window:scroll", ["$event"])
 
   // This function hides the scroll arrow when user
@@ -25,6 +31,7 @@ export class DesktopComponent implements OnInit {
   onWindowScroll() {
     if(!this.results) return;
 
+    // Calculate current scroll position
     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
 
     // TODO - Booo hardcoded numbers >:(
@@ -33,6 +40,27 @@ export class DesktopComponent implements OnInit {
     }
   }
 
+  openMenu($event) {
+    // Disable OS menu
+    $event.preventDefault();
+
+    // Should only be available in the "desktop"
+    if(this.results || this.titleScreen || this.fadeIn)
+      return;
+
+    // Open menu and get mouse coordinates.
+    this.menuOpen = true;
+    this.menuLeft = $event.clientX + "px";
+    this.menuTop = $event.clientY + "px";
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  // OTHER
+
+  // For accessing child elements.
   @ViewChild(EmailComponent) email;
   @ViewChild(DocumentComponent) documents;
 

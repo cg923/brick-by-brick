@@ -1,8 +1,15 @@
+<!-- TITLE SCREEN -->
 <div class="title" [ngClass]="{'hidden': hideTitle}">
 	<h1>BRICK BY BRICK</h1>
 </div>
 
-<div class="background" [ngClass]="{'results': results, 'title-screen': titleScreen, 'fade-in': fadeIn}">
+<!-- CONTEXT MENU -->
+<div *ngIf="menuOpen" class="context-menu" [style.top]="menuTop" [style.left]="menuLeft">
+	<span class="menu-item">Show Hidden Files</span>
+</div>
+
+<!-- DESKTOP -->
+<div class="background" [ngClass]="{'results': results, 'title-screen': titleScreen, 'fade-in': fadeIn}" (contextmenu)="openMenu($event)" (click)="closeMenu()">
 	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
 		<span class="icon-name">Light-Mail</span>
@@ -17,6 +24,7 @@
 	<app-notification></app-notification>
 </div>
 
+<!-- RESULTS -->
 <div *ngIf="finalReply" class="final" [ngClass]="{'final-reply': finalReply}">
 	<div class="response">
 		<span class="email-from">{{finalReply.from}}</span>
