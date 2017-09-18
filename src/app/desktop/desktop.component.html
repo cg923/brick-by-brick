@@ -16,11 +16,11 @@
 <div class="background" [ngClass]="{'results': results, 'title-screen': titleScreen, 'fade-in': fadeIn}" (contextmenu)="openMenu($event)" (click)="closeMenu()">
 	<div class="email-icon" (click)="showLightMail()">
 		<img class="icon" src="assets/mail.png">
-		<span class="icon-name">Light-Mail</span>
+		<span class="icon-name" [ngClass]="{'selected': lightMailSelected}">Light-Mail</span>
 	</div>
 	<div class="docs-icon" (click)="showDocuments()">
 		<img class="icon" src="assets/documents.png">
-		<span class="icon-name">Documents</span>
+		<span class="icon-name" [ngClass]="{'selected': documentsSelected}">Documents</span>
 	</div>
 	<app-email></app-email>
 	<app-document></app-document>

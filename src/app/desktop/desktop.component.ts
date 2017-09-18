@@ -73,14 +73,20 @@ export class DesktopComponent implements OnInit {
   results = false;
   finalReply = null;
   replyOption = null;
+  lightMailSelected = false;
+  documentsSelected = false;
 
   showLightMail() { 
     this.hideTitle = true;
+    this.lightMailSelected = true;
+    this.documentsSelected = false;
   	this.email.showLightMail(); 
   	this.documents.hideDocuments();
   }
 
-  showDocuments() { 
+  showDocuments() {
+    this.documentsSelected = true;
+    this.lightMailSelected = false;
   	this.email.hideLightMail();
   	this.documents.showDocuments();
   }
