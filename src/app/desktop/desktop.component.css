@@ -76,6 +76,10 @@
 	width: 80px;
 }
 
+.selected {
+	background: blue;
+}
+
 .results {
 	animation-name: results;
 	animation-duration: 3s;
