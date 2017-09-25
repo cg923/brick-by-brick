@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EmailService } from '../email-service.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-results',

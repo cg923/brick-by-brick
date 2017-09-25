@@ -7,7 +7,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Services
-import { EmailService } from './email-service.service';
+import { EmailService } from './email.service';
 import { DocumentService } from './document.service';
 
 // Components

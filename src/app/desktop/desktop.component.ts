@@ -4,7 +4,7 @@ import { DocumentComponent } from '../document/document.component';
 import { MenuComponent } from '../menu/menu.component';
 import { NotificationComponent } from '../notification/notification.component';
 import { ResultsComponent } from '../results/results.component';
-import { EmailService } from '../email-service.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-desktop',

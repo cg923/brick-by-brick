@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { EmailService } from '../email-service.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-email',

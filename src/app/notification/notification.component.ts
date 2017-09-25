@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailService } from '../email-service.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-notification',
