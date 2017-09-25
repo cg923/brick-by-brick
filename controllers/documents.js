@@ -5,7 +5,7 @@ const db 			= require('../models');
 // INDEX
 function getDocuments(req, res) {
 	db.Document.find({}, function(err, documents) {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(documents);
 	});
 }

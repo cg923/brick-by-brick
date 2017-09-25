@@ -6,7 +6,7 @@ const db 			= require('../models');
 // GET /emails
 function getEmails(req, res) {
 	db.Email.find({}, (err, emails) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(emails);
 	});
 }
@@ -14,7 +14,7 @@ function getEmails(req, res) {
 // GET /emails/:id
 function getEmail(req, res) {
 	db.Email.findOne({_id: req.params.id}, (err, email) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(email);
 	});
 }
@@ -23,7 +23,7 @@ function getEmail(req, res) {
 function postEmail(req, res) {
 	if (typeof(req.body) === 'string') req.body = JSON.parse(req.body);
 	db.Email.create(req.body, (err, email) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(email);
 	});
 }
@@ -32,7 +32,7 @@ function postEmail(req, res) {
 function updateEmail(req, res) {
 	if (typeof(req.body) === 'string') req.body = JSON.parse(req.body);
 	db.Email.findOne({_id: req.params.id}, (err, email) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 
 		email.to 		= req.body.to;
 		email.from 		= req.body.from;
@@ -42,7 +42,7 @@ function updateEmail(req, res) {
 		email.mailbox 	= req.body.mailbox;
 
 		email.save((err, email) => {
-			if (err) throw err;
+			if (err) throw console.log(err);
 			res.json(email);
 		});
 	});
@@ -51,7 +51,7 @@ function updateEmail(req, res) {
 // DELETE /emails/:id
 function deleteEmail(req, res) {
 	db.Email.remove({_id: req.params.id}, (err, email) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(email);
 	});
 }
@@ -61,7 +61,7 @@ function deleteEmail(req, res) {
 // GET /replies
 function getReplies(req, res) {
 	db.Reply.find({}, (err, replies) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		res.json(replies);
 	});
 }
@@ -71,7 +71,7 @@ function postReply(req, res, next) {
 	if(typeof(req.body) === 'string') req.body = JSON.parse(req.body);
 
 	db.Reply.findOne({replyOption: req.body.replyOption}, (err, reply) => {
-		if (err) throw err;
+		if (err) throw console.log(err);
 		else if(reply) {
 			reply.occurences++;
 			reply.save((err, reply) => {
@@ -90,7 +90,7 @@ function postReply(req, res, next) {
 			});
 
 			newReply.save((err, reply) => {
-				if(err) throw err;
+				if(err) throw console.log(err);
 				res.json(reply);
 			});
 		}
